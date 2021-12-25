@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="design.css">
+    </head>
+    <body>
+        <div class="register-page">
+            <div class="form"> 
+                <form class = "register-form">
+                    <input id="Username" type="text" placeholder="Username">
+                    <input id="password" type="password" placeholder="password">
+                    <input id="reppassword" type="password" placeholder="repeat password">
+                    <input id="email" type="text" placeholder="email">
+                    <input id="phone" type="Phone" placeholder="(985) 000-00-00" name="Phone">
+                    <input id="fName" type="text" placeholder="First Name">
+                    <input id="sName" type="text" placeholder="Fathers Name">
+                    <input id="lName" type="text" placeholder="Last Name">
+                    <input id="group" type="text" placeholder="Group">
+                    <button id="btnRegister">Create</button>
+                    <p class = "message">Already registered? <a href="index.html">Login</a></p>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+            const inplogIn = document.getElementById("Username");
+            const inppass = document.getElementById("password");
+            const inpreppass = document.getElementById("reppassword");
+            const inpeMail = document.getElementById("email");
+            const inpphone = document.getElementById("phone");
+            const inpfname = document.getElementById("fName");
+            const inpsname = document.getElementById("sName");
+            const inplname = document.getElementById("lName");
+            const inpgRoup = document.getElementById("group");
+            const buttonReg = document.getElementById("btnRegister");
+            
+            const log = [];
+            const pass1 = [];
+            const pass2 = [];
+            const mail = [];
+            const phonee = [];
+            const Fname = [];
+            const Smane = [];
+            const Lname = [];
+            const Groupp = [];
+
+            buttonReg.onclick = function(){
+                
+                const logIn = inplogIn.value;
+                const pass = inppass.value;
+                const reppass = inpreppass.value;
+                const eMail = inpeMail.value;
+                const phone = inpphone.value;
+                const fname = inpfname.value;
+                const sname = inpsname.value;
+                const lname = inplname.value;
+                const gRoup = inpgRoup.value;
+            
+                if (logIn && pass && reppass && eMail && phone && fname && sname && lname && gRoup){
+                    log.push(logIn);
+                    pass1.push(pass);
+                    pass2.push(reppass);
+                    mail.push(eMail);
+                    phonee.push(phone);
+                    Fname.push(fname);
+                    Smane.push(sname);
+                    Lname.push(lname);
+                    Groupp.push(gRoup);
+
+                    localStorage.setItem("login", log);
+                    localStorage.setItem("pass", pass1);
+                    localStorage.setItem("reppass", pass2);
+                    localStorage.setItem("mail", mail);
+                    localStorage.setItem("phone", phonee);
+                    localStorage.setItem("fName", Fname);
+                    localStorage.setItem("sName", Smane);
+                    localStorage.setItem("lName", Lname);
+                    localStorage.setItem("group", Groupp);
+
+                }
+            }
+        </script>
+    </body>
+</html>
